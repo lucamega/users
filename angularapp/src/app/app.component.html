@@ -1,0 +1,51 @@
+<div class="form-group">
+    <h1 id="tableLabel">Users</h1>
+</div>
+
+<div class="table-container">
+    <div class="table-row">
+        <div class="table-cell table-header-cell">Id</div>
+        <div class="table-cell table-header-cell">Name</div>
+        <div class="table-cell table-header-cell">Age</div>
+        <div class="table-cell table-header-cell">Address</div>
+        <div class="table-cell table-header-cell table-operations-cell"></div>
+    </div>
+    <div class="table-body-container">
+        <div class="table-row" *ngFor="let user of users">
+            <div class="table-cell table-body-cell">
+                <input type="text" [(ngModel)]="user.id" />
+            </div>
+            <div class="table-cell table-body-cell">
+                <input type="text" [(ngModel)]="user.name" />
+            </div>
+            <div class="table-cell table-body-cell">
+                <input type="number" [(ngModel)]="user.age" />
+            </div>
+            <div class="table-cell table-body-cell">
+                <input type="text" [(ngModel)]="user.address" />
+            </div>
+            <div class="table-cell table-body-cell table-operations-cell">
+                <a href="#" class="table-operation" (click)="onSaveClick(user)">Save</a>
+                <a href="#" class="table-operation" (click)="onDeleteClick(user.id)">Delete</a>
+            </div>
+        </div>
+        <div class="table-row">
+            <div class="table-cell table-new-cell">
+                <input type="text" class="table-field" #idInput />
+            </div>
+            <div class="table-cell table-new-cell">
+                <input type="text" class="table-field" #nameInput />
+            </div>
+            <div class="table-cell table-new-cell">
+                <input type="number" class="table-field" #ageInput />
+            </div>
+            <div class="table-cell table-new-cell">
+                <input type="text" class="table-field" #addressInput />
+            </div>
+            <div class="table-cell table-new-cell table-operations-cell">
+                <a href="#" class="table-operation"
+                   (click)="onAddClick()">Add</a>
+            </div>
+        </div>
+    </div>
+</div>
